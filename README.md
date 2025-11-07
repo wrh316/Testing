@@ -1300,9 +1300,218 @@
         .language-toggle i {
             color: var(--primary);
         }
+        
+        /* 登录界面样式 */
+        .login-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: all 0.5s ease;
+        }
+        
+        .login-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            width: 400px;
+            max-width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .dark-theme .login-box {
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--primary), 
+                var(--accent), 
+                var(--success), 
+                var(--warning));
+            border-radius: 24px 24px 0 0;
+        }
+        
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
+        }
+        
+        .login-logo i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .login-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-input {
+            padding: 12px 16px;
+            border: 2px solid rgba(67, 97, 238, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .dark-theme .form-input {
+            background: #334155;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+        
+        .login-btn {
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+        }
+        
+        .login-error {
+            color: var(--danger);
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 500;
+            display: none;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--light);
+            border-radius: 50px;
+            padding: 10px 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .dark-theme .user-info {
+            background: #334155;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .logout-btn {
+            background: var(--danger);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+        }
     </style>
 </head>
 <body>
+    <!-- 登录界面 -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-box">
+            <div class="login-logo">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h2 class="login-title" id="loginTitle">Class 10 Seat System</h2>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="login-error" id="loginError">Invalid username or password</div>
+            </form>
+        </div>
+    </div>
+    
     <!-- 粒子背景 -->
     <div class="particles" id="particles"></div>
     
@@ -1315,7 +1524,7 @@
     <div class="decoration-star" style="bottom: 20%; left: 15%;"><i class="fas fa-star"></i></div>
     <div class="decoration-star" style="bottom: 10%; right: 5%;"><i class="fas fa-star"></i></div>
     
-    <div class="container">
+    <div class="container" id="mainContainer" style="display: none;">
         <!-- 时间显示 -->
         <div class="time-display" id="timeDisplay"></div>
         
@@ -1350,6 +1559,13 @@
             <div class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon"></i>
                 <span id="themeText">Dark Mode</span>
+            </div>
+            <div class="user-info" id="userInfo">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <span id="userName">User</span>
+                <button class="logout-btn" id="logoutBtn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
             </div>
         </div>
         
@@ -1546,6 +1762,12 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
     </div>
 
     <script>
+        // 用户账户数据
+        const users = {
+            "public": "123456",
+            "wrh316": "998244353%%%"
+        };
+        
         // 语言资源
         const resources = {
             en: {
@@ -1609,7 +1831,14 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 versionText: "Version 3.16.253 | Last Update: 2025.11.6",
                 
                 // 初始输出文本
-                initialOutput: "Welcome to use the intelligent seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation, with a 3.2% probability of each person being assigned."
+                initialOutput: "Welcome to use the intelligent seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation, with a 3.2% probability of each person being assigned.",
+                
+                // 登录相关
+                loginTitle: "Class 10 Seat System",
+                usernameLabel: "Username",
+                passwordLabel: "Password",
+                loginButton: "Login",
+                loginError: "Invalid username or password"
             },
             zh: {
                 // 页面标题和副标题
@@ -1672,7 +1901,14 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 versionText: "版本 3.16.253 | 最后更新：2025.11.6",
                 
                 // 初始输出文本
-                initialOutput: "欢迎使用智能座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性，每个人被分配的概率为3.2%。"
+                initialOutput: "欢迎使用智能座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性，每个人被分配的概率为3.2%。",
+                
+                // 登录相关
+                loginTitle: "10班座位系统",
+                usernameLabel: "用户名",
+                passwordLabel: "密码",
+                loginButton: "登录",
+                loginError: "用户名或密码错误"
             }
         };
 
@@ -1695,9 +1931,19 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
         let history = JSON.parse(localStorage.getItem('seatHistory')) || [];
         let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
         let currentLanguage = localStorage.getItem('language') || 'en';
+        let currentUser = null;
         
         // 初始化主题和语言
         function initializeApp() {
+            // 检查是否已登录
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser && users[savedUser]) {
+                currentUser = savedUser;
+                showMainApp();
+            } else {
+                showLogin();
+            }
+            
             // 设置主题
             if (isDarkTheme) {
                 document.body.classList.add('dark-theme');
@@ -1713,6 +1959,40 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             
             // 创建粒子背景
             createParticles();
+        }
+        
+        // 显示登录界面
+        function showLogin() {
+            document.getElementById('loginContainer').style.display = 'flex';
+            document.getElementById('mainContainer').style.display = 'none';
+        }
+        
+        // 显示主应用
+        function showMainApp() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('mainContainer').style.display = 'block';
+            
+            // 更新用户信息
+            document.getElementById('userName').textContent = currentUser;
+            document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
+        }
+        
+        // 登录功能
+        function login(username, password) {
+            if (users[username] && users[username] === password) {
+                currentUser = username;
+                localStorage.setItem('currentUser', username);
+                showMainApp();
+                return true;
+            }
+            return false;
+        }
+        
+        // 登出功能
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            showLogin();
         }
         
         // 设置语言
@@ -1758,6 +2038,13 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             document.getElementById('footerText').textContent = resource.footerText;
             document.getElementById('versionInfoText').textContent = resource.versionInfoText;
             document.getElementById('versionText').textContent = resource.versionText;
+            
+            // 更新登录界面文本
+            document.getElementById('loginTitle').textContent = resource.loginTitle;
+            document.querySelector('label[for="username"]').textContent = resource.usernameLabel;
+            document.querySelector('label[for="password"]').textContent = resource.passwordLabel;
+            document.querySelector('.login-btn').textContent = resource.loginButton;
+            document.getElementById('loginError').textContent = resource.loginError;
             
             // 更新初始输出文本
             if (!currentSeating) {
@@ -2282,6 +2569,20 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             document.getElementById('themeToggle').addEventListener('click', toggleTheme);
             document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
             document.getElementById('searchInput').addEventListener('input', searchStudent);
+            document.getElementById('logoutBtn').addEventListener('click', logout);
+            
+            // 登录表单提交事件
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                
+                if (login(username, password)) {
+                    document.getElementById('loginError').style.display = 'none';
+                } else {
+                    document.getElementById('loginError').style.display = 'block';
+                }
+            });
             
             // 从本地存储加载设置
             const autoSave = localStorage.getItem('autoSave');
