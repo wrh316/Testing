@@ -2024,7 +2024,7 @@
                 // 班级选择界面
                 selectionTitle: "Select Class System",
                 class10Name: "Class 10, Grade 2024",
-                class10Description: "Perfect in every way, Class 10 fearless, ten battles and ten victories, winning the golden cup",
+                class10Description: "--",
                 class23Name: "Class 23, Grade 2024",
                 class23Description: "--",
                 boyStat: "Boys:",
@@ -2104,7 +2104,7 @@
                 // 班级选择界面
                 selectionTitle: "选择班级系统",
                 class10Name: "2024级10班",
-                class10Description: "十全十美，十班无畏，十战十胜，勇夺金杯",
+                class10Description: "--",
                 class23Name: "2024级23班",
                 class23Description: "--",
                 boyStat: "男生:",
