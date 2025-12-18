@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>班级座位随机分配系统</title>
+    <title>Class 10's Seat Random Number Program</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -383,12 +383,6 @@
             background: linear-gradient(135deg, #fd79a8, #e84393);
             color: white;
             box-shadow: 0 3px 10px rgba(253, 121, 168, 0.3);
-        }
-        
-        .student.empty {
-            background: linear-gradient(135deg, #dfe6e9, #b2bec3);
-            color: #636e72;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
         .student:hover {
@@ -1493,193 +1487,6 @@
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
         }
-        
-        /* 班级选择界面 */
-        .class-selection-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-gradient);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9998;
-            transition: all 0.5s ease;
-        }
-        
-        .class-selection-box {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            padding: 40px;
-            width: 500px;
-            max-width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        .dark-theme .class-selection-box {
-            background: rgba(30, 41, 59, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .class-selection-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                var(--primary), 
-                var(--accent), 
-                var(--success), 
-                var(--warning));
-            border-radius: 24px 24px 0 0;
-        }
-        
-        .selection-logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
-        }
-        
-        .selection-logo i {
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .selection-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--dark);
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .class-options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .class-option {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: var(--light);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .dark-theme .class-option {
-            background: #334155;
-        }
-        
-        .class-option:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--hover-shadow);
-        }
-        
-        .class-option.selected {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));
-        }
-        
-        .dark-theme .class-option.selected {
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.2), rgba(58, 12, 163, 0.2));
-        }
-        
-        .class-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: white;
-        }
-        
-        .class-icon.class10 {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        }
-        
-        .class-icon.class23 {
-            background: linear-gradient(135deg, #ec4899, #be185d);
-        }
-        
-        .class-info {
-            flex: 1;
-        }
-        
-        .class-name {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-        
-        .class-description {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        
-        .class-stats {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .class-stat {
-            background: rgba(255, 255, 255, 0.5);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .dark-theme .class-stat {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .class-stat.boy {
-            color: #3b82f6;
-        }
-        
-        .class-stat.girl {
-            color: #ec4899;
-        }
-        
-        .class-stat.total {
-            color: #10b981;
-        }
-        
-        .selection-buttons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .selection-buttons .btn {
-            flex: 1;
-            justify-content: center;
-        }
     </style>
 </head>
 <body>
@@ -1689,67 +1496,19 @@
             <div class="login-logo">
                 <i class="fas fa-chalkboard-teacher"></i>
             </div>
-            <h2 class="login-title" id="loginTitle">班级座位系统</h2>
+            <h2 class="login-title" id="loginTitle">Class 10 Seat System</h2>
             <form class="login-form" id="loginForm">
                 <div class="form-group">
-                    <label class="form-label" for="username">用户名</label>
-                    <input type="text" id="username" class="form-input" placeholder="请输入用户名" required>
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="password">密码</label>
-                    <input type="password" id="password" class="form-input" placeholder="请输入密码" required>
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="login-btn">登录</button>
-                <div class="login-error" id="loginError">用户名或密码错误</div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="login-error" id="loginError">Invalid username or password</div>
             </form>
-        </div>
-    </div>
-    
-    <!-- 班级选择界面 -->
-    <div class="class-selection-container" id="classSelectionContainer">
-        <div class="class-selection-box">
-            <div class="selection-logo">
-                <i class="fas fa-school"></i>
-            </div>
-            <h2 class="selection-title" id="selectionTitle">选择班级系统</h2>
-            <div class="class-options">
-                <div class="class-option" onclick="selectClass(10)">
-                    <div class="class-icon class10">
-                        <i class="fas fa-1"></i><i class="fas fa-0"></i>
-                    </div>
-                    <div class="class-info">
-                        <div class="class-name">2024级10班</div>
-                        <div class="class-description">十全十美，十班无畏，十战十胜，勇夺金杯</div>
-                    </div>
-                    <div class="class-stats">
-                        <div class="class-stat boy">男生: 31</div>
-                        <div class="class-stat girl">女生: 23</div>
-                        <div class="class-stat total">总计: 54</div>
-                    </div>
-                </div>
-                <div class="class-option" onclick="selectClass(23)">
-                    <div class="class-icon class23">
-                        <i class="fas fa-2"></i><i class="fas fa-3"></i>
-                    </div>
-                    <div class="class-info">
-                        <div class="class-name">2024级23班</div>
-                        <div class="class-description">二十三班，勇往直前，团结奋进，共创辉煌</div>
-                    </div>
-                    <div class="class-stats">
-                        <div class="class-stat boy">男生: 31</div>
-                        <div class="class-stat girl">女生: 22</div>
-                        <div class="class-stat total">总计: 53</div>
-                    </div>
-                </div>
-            </div>
-            <div class="selection-buttons">
-                <button class="btn btn-secondary" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i> 返回登录
-                </button>
-                <button class="btn btn-primary" onclick="enterSelectedClass()">
-                    <i class="fas fa-door-open"></i> 进入系统
-                </button>
-            </div>
         </div>
     </div>
     
@@ -1781,9 +1540,9 @@
             <div class="logo">
                 <i class="fas fa-chalkboard-teacher"></i>
             </div>
-            <h1 id="pageTitle">班级座位随机分配系统</h1>
-            <p class="subtitle" id="pageSubtitle">请选择班级后使用</p>
-            <div class="class-motto" id="classMotto"></div>
+            <h1 id="pageTitle">Class 10, Grade 2024</h1>
+            <p class="subtitle" id="pageSubtitle">Seat Random Number Program</p>
+            <div class="class-motto" id="classMotto">Perfect in every way, Class 10 fearless, ten battles and ten victories, winning the golden cup.</div>
             <div class="title-decoration"></div>
         </header>
         
@@ -1791,20 +1550,20 @@
         <div class="top-controls">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="搜索学生...">
+                <input type="text" id="searchInput" placeholder="Search for a student...">
             </div>
             <div class="language-toggle" id="languageToggle">
                 <i class="fas fa-globe"></i>
-                <span id="languageText">English</span>
+                <span id="languageText">中文</span>
             </div>
             <div class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon"></i>
-                <span id="themeText">深色模式</span>
+                <span id="themeText">Dark Mode</span>
             </div>
             <div class="user-info" id="userInfo">
                 <div class="user-avatar" id="userAvatar">U</div>
-                <span id="userName">用户</span>
-                <button class="logout-btn" id="logoutBtn" title="退出登录" onclick="returnToClassSelection()">
+                <span id="userName">User</span>
+                <button class="logout-btn" id="logoutBtn" title="Logout">
                     <i class="fas fa-sign-out-alt"></i>
                 </button>
             </div>
@@ -1813,19 +1572,19 @@
         <div class="control-panel">
             <button class="btn btn-primary" onclick="generateSeats()">
                 <i class="fas fa-random"></i>
-                <span id="generateBtnText">🎲 生成随机座位表</span>
+                <span id="generateBtnText">🎲 Generate Random Seating Chart</span>
             </button>
             <button class="btn btn-secondary" onclick="resetOutput()">
                 <i class="fas fa-redo"></i>
-                <span id="resetBtnText">🔄 重置系统</span>
+                <span id="resetBtnText">🔄 Reset System</span>
             </button>
             <button class="btn btn-secondary" onclick="toggleHistory()">
                 <i class="fas fa-history"></i>
-                <span id="historyBtnText">历史记录</span>
+                <span id="historyBtnText">History</span>
             </button>
             <button class="btn btn-secondary" onclick="toggleSettings()">
                 <i class="fas fa-cog"></i>
-                <span id="settingsBtnText">设置</span>
+                <span id="settingsBtnText">Settings</span>
             </button>
         </div>
         
@@ -1833,7 +1592,7 @@
         <div class="student-result" id="studentResult">
             <div class="student-result-header">
                 <i class="fas fa-user-graduate"></i>
-                <span id="searchResultText">学生搜索结果</span>
+                <span id="searchResultText">Student Search Result</span>
             </div>
             <div class="student-details" id="studentDetails">
                 <!-- 搜索结果将在这里显示 -->
@@ -1847,30 +1606,30 @@
         
         <div class="loading" id="loading">
             <div class="spinner"></div>
-            <p id="loadingText">正在随机分配座位...</p>
+            <p id="loadingText">Seats are being randomly assigned...</p>
         </div>
         
         <div class="output-section">
             <div class="output-header">
                 <div class="output-title">
                     <i class="fas fa-table"></i>
-                    <span id="outputTitleText">座位分配结果</span>
+                    <span id="outputTitleText">Seat Allocation Result</span>
                 </div>
                 <div class="tab-buttons">
                     <button class="tab-btn active" onclick="switchTab('console')">
-                        <span id="consoleTabText">控制台视图</span>
+                        <span id="consoleTabText">Console View</span>
                     </button>
                     <button class="tab-btn" onclick="switchTab('visual')">
-                        <span id="visualTabText">可视化视图</span>
+                        <span id="visualTabText">Visual View</span>
                     </button>
                 </div>
             </div>
             
             <div class="tab-content active" id="console-tab">
                 <div class="output-container" id="output">
-欢迎使用智能座位分配系统。
-请先选择班级，然后点击上方按钮开始生成随机座位表。
-本系统确保座位分配的随机性和公平性。
+Welcome to use the intelligent seat allocation system.
+Click the button above to start generating a random seating chart.
+This system ensures the randomness and fairness of seat allocation, with a 3.2% probability of each person being assigned.
                 </div>
             </div>
             
@@ -1878,11 +1637,11 @@
                 <div class="classroom">
                     <div class="classroom-bg"></div>
                     <div class="teacher-desk" id="teacherDesk">
-                        <i class="fas fa-chalkboard"></i> <span id="teacherDeskText">讲台</span>
+                        <i class="fas fa-chalkboard"></i> <span id="teacherDeskText">Teacher's Desk</span>
                     </div>
                     <div class="rows" id="seatingPlan">
                         <div style="text-align: center; padding: 40px; color: #7f8c8d; font-size: 1.2rem;" id="visualPromptText">
-                            请先选择班级，然后点击"生成随机座位表"按钮开始座位分配。
+                            Click the "Generate Random Seating Chart" button to start seat allocation.
                         </div>
                     </div>
                 </div>
@@ -1894,11 +1653,11 @@
             <div class="history-header">
                 <div class="history-title">
                     <i class="fas fa-history"></i>
-                    <span id="historyTitleText">生成历史</span>
+                    <span id="historyTitleText">Generation History</span>
                 </div>
                 <button class="btn btn-secondary" onclick="clearHistory()">
                     <i class="fas fa-trash"></i>
-                    <span id="clearHistoryText">清空历史</span>
+                    <span id="clearHistoryText">Clear History</span>
                 </button>
             </div>
             <div class="history-list" id="historyList">
@@ -1911,18 +1670,18 @@
             <div class="settings-header">
                 <div class="settings-title">
                     <i class="fas fa-cog"></i>
-                    <span id="settingsTitleText">系统设置</span>
+                    <span id="settingsTitleText">System Settings</span>
                 </div>
                 <button class="btn btn-secondary" onclick="toggleSettings()">
                     <i class="fas fa-times"></i>
-                    <span id="closeSettingsText">关闭</span>
+                    <span id="closeSettingsText">Close</span>
                 </button>
             </div>
             <div class="settings-content">
                 <div class="setting-item">
                     <div>
-                        <div class="setting-label" id="autoSaveLabel">自动保存历史</div>
-                        <div class="setting-description" id="autoSaveDesc">自动将每次生成保存到历史记录</div>
+                        <div class="setting-label" id="autoSaveLabel">Auto-save History</div>
+                        <div class="setting-description" id="autoSaveDesc">Automatically save each generation to history</div>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="autoSave" checked>
@@ -1931,8 +1690,8 @@
                 </div>
                 <div class="setting-item">
                     <div>
-                        <div class="setting-label" id="animationsLabel">显示动画效果</div>
-                        <div class="setting-description" id="animationsDesc">启用动画以获得更好的用户体验</div>
+                        <div class="setting-label" id="animationsLabel">Show Animation Effects</div>
+                        <div class="setting-description" id="animationsDesc">Enable animations for a better user experience</div>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="showAnimations" checked>
@@ -1941,8 +1700,8 @@
                 </div>
                 <div class="setting-item">
                     <div>
-                        <div class="setting-label" id="highlightLabel">高亮搜索结果</div>
-                        <div class="setting-description" id="highlightDesc">在座位表中高亮显示找到的学生</div>
+                        <div class="setting-label" id="highlightLabel">Highlight Search Results</div>
+                        <div class="setting-description" id="highlightDesc">Highlight found students in the seating chart</div>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="highlightResults" checked>
@@ -1957,86 +1716,66 @@
                 <div class="stat-icon">
                     <i class="fas fa-male"></i>
                 </div>
-                <h3 id="boyCountText">男生人数</h3>
-                <div class="number" id="boyCount">0</div>
+                <h3 id="boyCountText">Boy Count</h3>
+                <div class="number">31</div>
             </div>
             <div class="stat-card stat-girl">
                 <div class="stat-icon">
                     <i class="fas fa-female"></i>
                 </div>
-                <h3 id="girlCountText">女生人数</h3>
-                <div class="number" id="girlCount">0</div>
+                <h3 id="girlCountText">Girl Count</h3>
+                <div class="number">23</div>
             </div>
             <div class="stat-card stat-total">
                 <div class="stat-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <h3 id="totalCountText">总人数</h3>
-                <div class="number" id="totalCount">0</div>
+                <h3 id="totalCountText">All Count</h3>
+                <div class="number">54</div>
             </div>
             <div class="stat-card stat-seat">
                 <div class="stat-icon">
                     <i class="fas fa-chair"></i>
                 </div>
-                <h3 id="seatCountText">座位数量</h3>
-                <div class="number" id="seatCount">0</div>
+                <h3 id="seatCountText">Seat Count</h3>
+                <div class="number">27</div>
             </div>
         </div>
         
         <footer>
             <div class="footer-content">
                 <div>
-                    <p id="footerText">© 2025 班级座位随机分配系统 | 作者：@wrh316 | 网站</p>
+                    <p id="footerText">© 2025 Class 10's Seat Random Number Program | Author by @wrh316 | Website</p>
                     <p style="margin-top: 5px; font-size: 0.9rem; color: #94a3b8;">
-                        <i class="fas fa-code"></i> <span id="versionInfoText">网页版本，C++版本：https://note.ms/classseat</span>
+                        <i class="fas fa-code"></i> <span id="versionInfoText">Website Versions，C++ Versions：https://note.ms/class10seat</span>
                     </p>
                 </div>
                 <div class="version">
-                    <i class="fas fa-star"></i> <span id="versionText">版本 4.0.0 | 最后更新：2025.12.14</span>
+                    <i class="fas fa-star"></i> <span id="versionText">Version 3.16.7 | Last Update: 2025.10.1</span>
                 </div>
             </div>
         </footer>
     </div>
 
     <div class="success-message" id="successMessage">
-        <i class="fas fa-check-circle"></i> <span id="successText">代码已成功完成</span>
+        <i class="fas fa-check-circle"></i> <span id="successText">The Code has Completed Successfully</span>
     </div>
 
     <script>
         // 用户账户数据
         const users = {
-            "public": "classseat",
+            "public": "Lengendary Grandmaster",
             "wrh316": "998244353%%%",
-            "Gao": "168168",
-            "admin": "admin123"
+            "Gao": "168168"
         };
         
         // 语言资源
         const resources = {
             en: {
-                // 登录界面
-                loginTitle: "Class Seat System",
-                usernameLabel: "Username",
-                passwordLabel: "Password",
-                loginButton: "Login",
-                loginError: "Invalid username or password",
-                
-                // 班级选择界面
-                selectionTitle: "Select Class System",
-                class10Name: "Class 10, Grade 2024",
-                class10Description: "--",
-                class23Name: "Class 23, Grade 2024",
-                class23Description: "--",
-                boyStat: "Boys:",
-                girlStat: "Girls:",
-                totalStat: "Total:",
-                returnLogin: "Back to Login",
-                enterSystem: "Enter System",
-                
                 // 页面标题和副标题
-                pageTitle: "Class Seat Random Allocation System",
-                pageSubtitle: "Please select a class first",
-                classMotto: "",
+                pageTitle: "Class 10, Grade 2024",
+                pageSubtitle: "Seat Random Number Program",
+                classMotto: "Perfect in every way, Class 10 fearless, ten battles and ten victories, winning the golden cup.",
                 
                 // 按钮文本
                 generateBtnText: "🎲 Generate Random Seating Chart",
@@ -2053,8 +1792,7 @@
                 consoleTabText: "Console View",
                 visualTabText: "Visual View",
                 teacherDeskText: "Teacher's Desk",
-                visualPromptText: 'Please select a class first, then click the "Generate Random Seating Chart" button to start seat allocation.',
-                initialOutput: "Welcome to the intelligent seat allocation system.\nPlease select a class first, then click the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation.",
+                visualPromptText: 'Click the "Generate Random Seating Chart" button to start seat allocation.',
                 
                 // 加载文本
                 loadingText: "Seats are being randomly assigned...",
@@ -2089,34 +1827,25 @@
                 successText: "The Code has Completed Successfully",
                 
                 // 页脚
-                footerText: "© 2025 Class Seat Random Allocation System | Author by @wrh316 | Website",
-                versionInfoText: "Website Versions，C++ Versions：https://note.ms/classseat",
-                versionText: "Version 4.0.0 | Last Update: 2025.12.14",
+                footerText: "© 2025 Class 10's Seat Random Number Program | Author by @wrh316 | Website",
+                versionInfoText: "Website Versions，C++ Versions：https://note.ms/class10seat",
+                versionText: "Version 3.16.253 | Last Update: 2025.11.6",
+                
+                // 初始输出文本
+                initialOutput: "Welcome to use the intelligent seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation, with a 3.2% probability of each person being assigned.",
+                
+                // 登录相关
+                loginTitle: "Class 10 Seat System",
+                usernameLabel: "Username",
+                passwordLabel: "Password",
+                loginButton: "Login",
+                loginError: "Invalid username or password"
             },
             zh: {
-                // 登录界面
-                loginTitle: "班级座位系统",
-                usernameLabel: "用户名",
-                passwordLabel: "密码",
-                loginButton: "登录",
-                loginError: "用户名或密码错误",
-                
-                // 班级选择界面
-                selectionTitle: "选择班级系统",
-                class10Name: "2024级10班",
-                class10Description: "--",
-                class23Name: "2024级23班",
-                class23Description: "--",
-                boyStat: "男生:",
-                girlStat: "女生:",
-                totalStat: "总计:",
-                returnLogin: "返回登录",
-                enterSystem: "进入系统",
-                
                 // 页面标题和副标题
-                pageTitle: "班级座位随机分配系统",
-                pageSubtitle: "请选择班级后使用",
-                classMotto: "",
+                pageTitle: "2024级10班",
+                pageSubtitle: "座位随机分配系统",
+                classMotto: "十全十美，十班无畏，十战十胜，勇夺金杯。",
                 
                 // 按钮文本
                 generateBtnText: "🎲 生成随机座位表",
@@ -2133,8 +1862,7 @@
                 consoleTabText: "控制台视图",
                 visualTabText: "可视化视图",
                 teacherDeskText: "讲台",
-                visualPromptText: '请先选择班级，然后点击"生成随机座位表"按钮开始座位分配。',
-                initialOutput: "欢迎使用智能座位分配系统。\n请先选择班级，然后点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性。",
+                visualPromptText: '点击"生成随机座位表"按钮开始座位分配。',
                 
                 // 加载文本
                 loadingText: "正在随机分配座位...",
@@ -2169,81 +1897,50 @@
                 successText: "代码已成功完成",
                 
                 // 页脚
-                footerText: "© 2025 班级座位随机分配系统 | 作者：@wrh316 | 网站",
-                versionInfoText: "网页版本，C++版本：https://note.ms/classseat",
-                versionText: "版本 4.0.0 | 最后更新：2025.12.14",
+                footerText: "© 2025 10班座位随机分配系统 | 作者：@wrh316 | 网站",
+                versionInfoText: "网页版本，C++版本：https://note.ms/class10seat",
+                versionText: "版本 3.16.253 | 最后更新：2025.11.6",
+                
+                // 初始输出文本
+                initialOutput: "欢迎使用智能座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性，每个人被分配的概率为3.2%。",
+                
+                // 登录相关
+                loginTitle: "10班座位系统",
+                usernameLabel: "用户名",
+                passwordLabel: "密码",
+                loginButton: "登录",
+                loginError: "用户名或密码错误"
             }
         };
 
-        // 10班学生名单
-        const class10Boys = [
-            "张逸轩", "张庐焜", "黄月童", "吴弘宇", "张涵睿", "余浩玮", "许正涛",
+        // 学生名单
+        const boys = [
+            "", "张逸轩", "张庐焜", "黄月童", "吴弘宇", "张涵睿", "余浩玮", "许正涛",
             "王若鸿", "张炜承", "郭辰睿", "闻泽", "高竟翔", "吴进宇", "章津跃", "辛伯辰",
             "昌靖茗", "高伟宸", "柯源", "徐浩中", "王海骁", "张欣成", "范洪鑫", "杨颜旗",
             "李元昊", "刘柯汉", "章横溢", "陈思友", "李浚玮", "李承志", "孙家腾", "李辰熙"
         ];
         
-        const class10Girls = [
-            "毕思妍", "万金慧", "王泽予", "闫可欣", "袁灏亓", "王璟瑜", "周依冉",
+        const girls = [
+            "", "毕思妍", "万金慧", "王泽予", "闫可欣", "袁灏亓", "王璟瑜", "周依冉",
             "魏可晗", "陈晓希", "汪嘉彦", "沈傲然", "刘洋东", "余正月", "王泺辰", "杨渃馨",
             "余正秋", "张瀛嘉", "汪悦桐", "陈雨谦", "孙天佑", "黄焱熔", "肖雅祺", "常昕妤"
-        ];
-        
-        // 23班学生名单
-        const class23Girls = [
-            "马辰熙", "邓思宇", "史晨语", "朱梓钰", "刘诗华", "杨子淇", "杨璟澜", 
-            "吴宇汐涵", "汪佩锦", "张蓝天", "武辰夕", "罗月瑶", "罗锡玥", "郑雅匀", 
-            "孟歆", "胡星羽", "黄梓欣", "戚米悠优", "翟鑫喆", "颜子璇", "魏语宸", "丁安可"
-        ];
-        
-        const class23Boys = [
-            "马梓煜", "王泽翔", "王越", "王新升", "王瀚晨", "田云卿", "付家熠", 
-            "司竟成", "刘司博", "汤钧淇", "李宇辰", "李添睿", "杨子鑫", "杨萧冉", 
-            "杨骐宇", "杨睿辰", "束天成", "何欣彧", "余思恩", "张沐宸", "罗泽青", 
-            "周逸凡", "赵恩世", "胡昊然", "胡源清", "祝一鸣", "贺艺宁", "袁玮辰", 
-            "夏慕梓涵", "晏汀烁", "浦溯"
         ];
         
         // 全局变量
         let currentSeating = null;
         let history = JSON.parse(localStorage.getItem('seatHistory')) || [];
         let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-        let currentLanguage = localStorage.getItem('language') || 'zh';
+        let currentLanguage = localStorage.getItem('language') || 'en';
         let currentUser = null;
-        let selectedClass = null;
-        let currentClassData = null;
         
-        // 班级数据
-        const classData = {
-            10: {
-                name: "10班",
-                boys: class10Boys,
-                girls: class10Girls,
-                motto: "十全十美，十班无畏，十战十胜，勇夺金杯",
-                boyCount: 31,
-                girlCount: 23,
-                totalCount: 54,
-                seatCount: 27
-            },
-            23: {
-                name: "23班",
-                boys: class23Boys,
-                girls: class23Girls,
-                motto: "/",
-                boyCount: 31,
-                girlCount: 22,
-                totalCount: 53,
-                seatCount: 27
-            }
-        };
-        
-        // 初始化应用
+        // 初始化主题和语言
         function initializeApp() {
             // 检查是否已登录
             const savedUser = localStorage.getItem('currentUser');
             if (savedUser && users[savedUser]) {
                 currentUser = savedUser;
-                showClassSelection();
+                showMainApp();
             } else {
                 showLogin();
             }
@@ -2268,34 +1965,17 @@
         // 显示登录界面
         function showLogin() {
             document.getElementById('loginContainer').style.display = 'flex';
-            document.getElementById('classSelectionContainer').style.display = 'none';
             document.getElementById('mainContainer').style.display = 'none';
-        }
-        
-        // 显示班级选择界面
-        function showClassSelection() {
-            document.getElementById('loginContainer').style.display = 'none';
-            document.getElementById('classSelectionContainer').style.display = 'flex';
-            document.getElementById('mainContainer').style.display = 'none';
-            
-            // 更新用户信息
-            updateSelectionText();
         }
         
         // 显示主应用
         function showMainApp() {
             document.getElementById('loginContainer').style.display = 'none';
-            document.getElementById('classSelectionContainer').style.display = 'none';
             document.getElementById('mainContainer').style.display = 'block';
             
             // 更新用户信息
             document.getElementById('userName').textContent = currentUser;
             document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
-            
-            // 更新班级信息
-            if (selectedClass && currentClassData) {
-                updateClassInfo();
-            }
         }
         
         // 登录功能
@@ -2303,7 +1983,7 @@
             if (users[username] && users[username] === password) {
                 currentUser = username;
                 localStorage.setItem('currentUser', username);
-                showClassSelection();
+                showMainApp();
                 return true;
             }
             return false;
@@ -2312,98 +1992,8 @@
         // 登出功能
         function logout() {
             currentUser = null;
-            selectedClass = null;
-            currentClassData = null;
             localStorage.removeItem('currentUser');
-            localStorage.removeItem('selectedClass');
             showLogin();
-        }
-        
-        // 返回班级选择界面
-        function returnToClassSelection() {
-            showClassSelection();
-        }
-        
-        // 选择班级
-        function selectClass(classNumber) {
-            selectedClass = classNumber;
-            currentClassData = classData[classNumber];
-            
-            // 更新UI选中状态
-            document.querySelectorAll('.class-option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            event.currentTarget.classList.add('selected');
-        }
-        
-        // 进入选中的班级系统
-        function enterSelectedClass() {
-            if (!selectedClass) {
-                alert(currentLanguage === 'en' ? 'Please select a class first' : '请先选择一个班级');
-                return;
-            }
-            
-            localStorage.setItem('selectedClass', selectedClass);
-            showMainApp();
-        }
-        
-        // 更新班级信息
-        function updateClassInfo() {
-            if (!currentClassData) return;
-            
-            const resource = resources[currentLanguage];
-            document.getElementById('pageTitle').textContent = `2024级${currentClassData.name}`;
-            document.getElementById('pageSubtitle').textContent = currentLanguage === 'en' ? 'Seat Random Allocation System' : '座位随机分配系统';
-            document.getElementById('classMotto').textContent = currentClassData.motto;
-            
-            // 更新统计信息
-            document.getElementById('boyCount').textContent = currentClassData.boyCount;
-            document.getElementById('girlCount').textContent = currentClassData.girlCount;
-            document.getElementById('totalCount').textContent = currentClassData.totalCount;
-            document.getElementById('seatCount').textContent = currentClassData.seatCount;
-            
-            // 更新初始输出文本
-            const initialOutput = currentLanguage === 'en' 
-                ? `Welcome to Class ${currentClassData.name} seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation.`
-                : `欢迎使用${currentClassData.name}座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性。`;
-            
-            if (!currentSeating) {
-                document.getElementById('output').textContent = initialOutput;
-            }
-            
-            // 更新可视化提示
-            const visualPrompt = currentLanguage === 'en'
-                ? `Click the "Generate Random Seating Chart" button to start seat allocation for Class ${currentClassData.name}.`
-                : `点击"生成随机座位表"按钮开始为${currentClassData.name}分配座位。`;
-            document.getElementById('visualPromptText').textContent = visualPrompt;
-        }
-        
-        // 更新选择界面文本
-        function updateSelectionText() {
-            const resource = resources[currentLanguage];
-            document.getElementById('selectionTitle').textContent = resource.selectionTitle;
-            document.querySelector('.class-option:nth-child(1) .class-name').textContent = resource.class10Name;
-            document.querySelector('.class-option:nth-child(1) .class-description').textContent = resource.class10Description;
-            document.querySelector('.class-option:nth-child(2) .class-name').textContent = resource.class23Name;
-            document.querySelector('.class-option:nth-child(2) .class-description').textContent = resource.class23Description;
-            
-            // 更新统计标签
-            const statsLabels = document.querySelectorAll('.class-stat');
-            if (statsLabels.length >= 6) {
-                statsLabels[0].innerHTML = `${resource.boyStat} 31`;
-                statsLabels[1].innerHTML = `${resource.girlStat} 23`;
-                statsLabels[2].innerHTML = `${resource.totalStat} 54`;
-                statsLabels[3].innerHTML = `${resource.boyStat} 31`;
-                statsLabels[4].innerHTML = `${resource.girlStat} 22`;
-                statsLabels[5].innerHTML = `${resource.totalStat} 53`;
-            }
-            
-            // 更新按钮文本
-            const buttons = document.querySelectorAll('.selection-buttons .btn');
-            if (buttons.length >= 2) {
-                buttons[0].innerHTML = `<i class="fas fa-sign-out-alt"></i> ${resource.returnLogin}`;
-                buttons[1].innerHTML = `<i class="fas fa-door-open"></i> ${resource.enterSystem}`;
-            }
         }
         
         // 设置语言
@@ -2414,18 +2004,9 @@
             const resource = resources[lang];
             
             // 更新所有文本元素
-            document.getElementById('loginTitle').textContent = resource.loginTitle;
-            document.querySelector('label[for="username"]').textContent = resource.usernameLabel;
-            document.querySelector('label[for="password"]').textContent = resource.passwordLabel;
-            document.querySelector('.login-btn').textContent = resource.loginButton;
-            document.getElementById('loginError').textContent = resource.loginError;
-            
-            // 更新选择界面文本
-            updateSelectionText();
-            
-            // 更新主界面文本
             document.getElementById('pageTitle').textContent = resource.pageTitle;
             document.getElementById('pageSubtitle').textContent = resource.pageSubtitle;
+            document.getElementById('classMotto').textContent = resource.classMotto;
             document.getElementById('generateBtnText').textContent = resource.generateBtnText;
             document.getElementById('resetBtnText').textContent = resource.resetBtnText;
             document.getElementById('historyBtnText').textContent = resource.historyBtnText;
@@ -2459,13 +2040,15 @@
             document.getElementById('versionInfoText').textContent = resource.versionInfoText;
             document.getElementById('versionText').textContent = resource.versionText;
             
+            // 更新登录界面文本
+            document.getElementById('loginTitle').textContent = resource.loginTitle;
+            document.querySelector('label[for="username"]').textContent = resource.usernameLabel;
+            document.querySelector('label[for="password"]').textContent = resource.passwordLabel;
+            document.querySelector('.login-btn').textContent = resource.loginButton;
+            document.getElementById('loginError').textContent = resource.loginError;
+            
             // 更新初始输出文本
-            if (!currentSeating && selectedClass && currentClassData) {
-                const initialOutput = currentLanguage === 'en' 
-                    ? `Welcome to Class ${currentClassData.name} seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation.`
-                    : `欢迎使用${currentClassData.name}座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性。`;
-                document.getElementById('output').textContent = initialOutput;
-            } else if (!currentSeating) {
+            if (!currentSeating) {
                 document.getElementById('output').textContent = resource.initialOutput;
             }
         }
@@ -2560,8 +2143,7 @@
         
         // 判断学生是否为男生
         function isBoy(name) {
-            if (!selectedClass || !currentClassData) return false;
-            return currentClassData.boys.includes(name);
+            return boys.includes(name);
         }
         
         // 更新时钟显示
@@ -2590,13 +2172,11 @@
             desk.appendChild(deskNumberElem);
             
             const student1Elem = document.createElement('div');
-            const student1Class = student1 === "空" ? "empty" : (isBoy(student1) ? 'boy' : 'girl');
-            student1Elem.className = `student ${student1Class}`;
+            student1Elem.className = `student ${isBoy(student1) ? 'boy' : 'girl'}`;
             student1Elem.textContent = student1;
             
             const student2Elem = document.createElement('div');
-            const student2Class = student2 === "空" ? "empty" : (isBoy(student2) ? 'boy' : 'girl');
-            student2Elem.className = `student ${student2Class}`;
+            student2Elem.className = `student ${isBoy(student2) ? 'boy' : 'girl'}`;
             student2Elem.textContent = student2;
             
             desk.appendChild(student1Elem);
@@ -2605,13 +2185,51 @@
             return desk;
         }
         
-        // 生成座位表
-        async function generateSeats() {
-            if (!selectedClass || !currentClassData) {
-                alert(currentLanguage === 'en' ? 'Please select a class first' : '请先选择一个班级');
-                return;
+        // 从文本输出中解析座位信息
+        function parseSeatingFromOutput(outputText) {
+            const lines = outputText.trim().split('\n');
+            const seating = [];
+            
+            for (const line of lines) {
+                const matches = line.match(/\s+([^\s]+)\s+([^\s]+)/g);
+                if (matches) {
+                    for (const match of matches) {
+                        const pair = match.trim().split(/\s+/);
+                        if (pair.length === 2 && pair[0] && pair[1]) {
+                            seating.push([pair[0], pair[1]]);
+                        }
+                    }
+                }
             }
             
+            return seating;
+        }
+        
+        // 比较两个座位安排，返回相同同桌的数量
+        function compareSeatings(seating1, seating2) {
+            if (!seating1 || !seating2) return 0;
+            
+            let samePairs = 0;
+            const seating2Set = new Set();
+            
+            // 将第二个座位安排转换为字符串集合（双向匹配）
+            for (const [s1, s2] of seating2) {
+                seating2Set.add(`${s1},${s2}`);
+                seating2Set.add(`${s2},${s1}`); // 双向都考虑
+            }
+            
+            // 比较第一个座位安排
+            for (const [s1, s2] of seating1) {
+                if (seating2Set.has(`${s1},${s2}`) || seating2Set.has(`${s2},${s1}`)) {
+                    samePairs++;
+                }
+            }
+            
+            return samePairs;
+        }
+        
+        // 生成座位表
+        async function generateSeats() {
             const output = document.getElementById('output');
             const seatingPlan = document.getElementById('seatingPlan');
             const loading = document.getElementById('loading');
@@ -2637,67 +2255,131 @@
             
             setTimeout(async () => {
                 let outputText = '';
+                let attempts = 0;
+                const maxAttempts = 10; // 最大尝试次数
+                let validSeating = false;
+                let seatingPairs = [];
                 
-                // 创建学生数组
-                let allStudents = [...currentClassData.boys, ...currentClassData.girls];
-                
-                // 使用安全的随机算法打乱数组
-                allStudents = await shuffleArraySecure(allStudents);
+                do {
+                    attempts++;
+                    
+                    // 创建卡片数组
+                    let cardboy = Array.from({length: 31}, (_, i) => i + 1);
+                    let cardgirl = Array.from({length: 23}, (_, i) => i + 1);
+                    
+                    // 使用安全的随机算法打乱数组
+                    cardboy = await shuffleArraySecure(cardboy);
+                    cardgirl = await shuffleArraySecure(cardgirl);
+                    
+                    // 存储当前座位分配
+                    currentSeating = {
+                        boys: [...cardboy],
+                        girls: [...cardgirl],
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    // 生成座位表
+                    let deskCounter = 1;
+                    let boyGirlPairs = 23; // 男生女生同桌对数
+                    let boyBoyPairs = 4;   // 男生男生同桌对数
+                    
+                    // 创建座位数组
+                    let seats = [];
+                    
+                    // 添加男生女生同桌 - 确保前后错开
+                    for (let i = 0; i < boyGirlPairs; i++) {
+                        // 交替安排男生女生和女生男生
+                        if (i % 2 === 0) {
+                            // 男生在左，女生在右
+                            seats.push({
+                                type: 'boy-girl',
+                                student1: boys[cardboy[i]],
+                                student2: girls[cardgirl[i]]
+                            });
+                        } else {
+                            // 女生在左，男生在右
+                            seats.push({
+                                type: 'girl-boy',
+                                student1: girls[cardgirl[i]],
+                                student2: boys[cardboy[i]]
+                            });
+                        }
+                    }
+                    
+                    // 添加男生男生同桌
+                    for (let i = 0; i < boyBoyPairs; i++) {
+                        seats.push({
+                            type: 'boy-boy',
+                            student1: boys[cardboy[boyGirlPairs + i]],
+                            student2: boys[cardboy[boyGirlPairs + boyBoyPairs + i]]
+                        });
+                    }
+                    
+                    // 随机打乱座位顺序
+                    seats = await shuffleArraySecure(seats);
+                    
+                    // 将座位分成7行，每行4个座位
+                    seatingPairs = [];
+                    outputText = '';
+                    
+                    for (let i = 0; i < 7; i++) {
+                        let line = '| ';
+                        
+                        for (let j = 0; j < 4; j++) {
+                            const seatIndex = i * 4 + j;
+                            if (seatIndex < seats.length) {
+                                const seat = seats[seatIndex];
+                                line += setw(seat.student1, 4) + ' ' + setw(seat.student2, 4) + ' | ';
+                                seatingPairs.push([seat.student1, seat.student2]);
+                            }
+                        }
+                        
+                        outputText += line + '\n';
+                    }
+                    
+                    // 检查是否与最近一次历史记录有超过2组相同同桌
+                    if (history.length > 0) {
+                        const lastHistory = history[0];
+                        const lastSeating = parseSeatingFromOutput(lastHistory.output);
+                        const samePairs = compareSeatings(seatingPairs, lastSeating);
+                        
+                        if (samePairs > 2) {
+                            console.log(`Attempt ${attempts}: Found ${samePairs} same pairs with last history, regenerating...`);
+                            validSeating = false;
+                        } else {
+                            validSeating = true;
+                            console.log(`Attempt ${attempts}: Valid seating found with ${samePairs} same pairs`);
+                        }
+                    } else {
+                        validSeating = true;
+                        console.log(`Attempt ${attempts}: First seating, no history to compare`);
+                    }
+                    
+                    if (attempts >= maxAttempts) {
+                        console.log(`Max attempts (${maxAttempts}) reached, using current seating`);
+                        validSeating = true;
+                    }
+                    
+                } while (!validSeating);
                 
                 // 清空可视化座位表
                 seatingPlan.innerHTML = '';
                 
-                // 存储当前座位分配
-                currentSeating = {
-                    class: selectedClass,
-                    students: [...allStudents],
-                    timestamp: new Date().toISOString()
-                };
-                
-                // 计算需要的座位数
-                const totalStudents = allStudents.length;
-                const seatsNeeded = Math.ceil(totalStudents / 2);
-                
-                // 创建座位数组
-                let seats = [];
-                
-                // 创建座位对
-                for (let i = 0; i < seatsNeeded; i++) {
-                    const index1 = i * 2;
-                    const index2 = i * 2 + 1;
-                    
-                    const student1 = index1 < totalStudents ? allStudents[index1] : "空";
-                    const student2 = index2 < totalStudents ? allStudents[index2] : "空";
-                    
-                    seats.push({
-                        student1: student1,
-                        student2: student2
-                    });
-                }
-                
-                // 将座位分成7行，每行4个座位
+                // 创建可视化座位
                 let deskCounter = 1;
                 for (let i = 0; i < 7; i++) {
                     const row = document.createElement('div');
                     row.className = 'row';
-                    let line = '| ';
                     
                     for (let j = 0; j < 4; j++) {
                         const seatIndex = i * 4 + j;
-                        if (seatIndex < seats.length) {
-                            const seat = seats[seatIndex];
-                            line += setw(seat.student1, 6) + ' ' + setw(seat.student2, 6) + ' | ';
-                            
-                            const desk = createDesk(
-                                seat.student1, 
-                                seat.student2,
-                                deskCounter++
-                            );
+                        if (seatIndex < seatingPairs.length) {
+                            const [student1, student2] = seatingPairs[seatIndex];
+                            const desk = createDesk(student1, student2, deskCounter++);
                             row.appendChild(desk);
                         }
                     }
                     
-                    outputText += line + '\n';
                     seatingPlan.appendChild(row);
                 }
                 
@@ -2720,21 +2402,18 @@
         
         // 重置输出
         function resetOutput() {
-            if (!selectedClass || !currentClassData) return;
-            
             const resource = resources[currentLanguage];
-            const initialOutput = currentLanguage === 'en' 
-                ? `Welcome to Class ${currentClassData.name} seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation.`
-                : `欢迎使用${currentClassData.name}座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性。`;
-            
-            document.getElementById('output').textContent = initialOutput;
-            
-            const visualPrompt = currentLanguage === 'en'
-                ? `Click the "Generate Random Seating Chart" button to start seat allocation for Class ${currentClassData.name}.`
-                : `点击"生成随机座位表"按钮开始为${currentClassData.name}分配座位。`;
-            document.getElementById('seatingPlan').innerHTML = `<div style="text-align: center; padding: 40px; color: #7f8c8d; font-size: 1.2rem;">${visualPrompt}</div>`;
+            document.getElementById('output').textContent = resource.initialOutput;
+            document.getElementById('seatingPlan').innerHTML = `<div style="text-align: center; padding: 40px; color: #7f8c8d; font-size: 1.2rem;">${resource.visualPromptText}</div>`;
             document.getElementById('studentResult').style.display = 'none';
             currentSeating = null;
+            
+            // 清空历史记录
+            history = [];
+            localStorage.removeItem('seatHistory');
+            renderHistory();
+            
+            console.log('System has been reset. All history cleared.');
         }
         
         // 切换主题
@@ -2785,7 +2464,6 @@
         // 保存到历史记录
         function saveToHistory(outputText) {
             const historyItem = {
-                class: selectedClass,
                 output: outputText,
                 timestamp: new Date().toISOString(),
                 date: new Date().toLocaleString()
@@ -2820,9 +2498,8 @@
                 
                 const header = document.createElement('div');
                 header.className = 'history-item-header';
-                const classText = currentLanguage === 'en' ? `Class ${item.class}` : `${item.class}班`;
                 header.innerHTML = `
-                    <span>${currentLanguage === 'en' ? 'Generation' : '生成'} #${history.length - index} (${classText})</span>
+                    <span>${currentLanguage === 'en' ? 'Generation' : '生成'} #${history.length - index}</span>
                     <span>${item.date}</span>
                 `;
                 
@@ -2844,14 +2521,32 @@
         
         // 加载历史记录项
         function loadHistoryItem(item) {
-            // 如果历史记录项来自其他班级，需要切换班级
-            if (item.class !== selectedClass) {
-                selectedClass = item.class;
-                currentClassData = classData[selectedClass];
-                updateClassInfo();
+            document.getElementById('output').textContent = item.output;
+            
+            // 解析座位信息并创建可视化座位
+            const seatingPairs = parseSeatingFromOutput(item.output);
+            const seatingPlan = document.getElementById('seatingPlan');
+            seatingPlan.innerHTML = '';
+            
+            if (seatingPairs.length > 0) {
+                let deskCounter = 1;
+                for (let i = 0; i < 7; i++) {
+                    const row = document.createElement('div');
+                    row.className = 'row';
+                    
+                    for (let j = 0; j < 4; j++) {
+                        const seatIndex = i * 4 + j;
+                        if (seatIndex < seatingPairs.length) {
+                            const [student1, student2] = seatingPairs[seatIndex];
+                            const desk = createDesk(student1, student2, deskCounter++);
+                            row.appendChild(desk);
+                        }
+                    }
+                    
+                    seatingPlan.appendChild(row);
+                }
             }
             
-            document.getElementById('output').textContent = item.output;
             document.getElementById('historyPanel').style.display = 'none';
             showSuccessMessage();
         }
@@ -2865,11 +2560,6 @@
         
         // 搜索学生
         function searchStudent() {
-            if (!selectedClass || !currentClassData) {
-                alert(currentLanguage === 'en' ? 'Please select a class first' : '请先选择一个班级');
-                return;
-            }
-            
             const searchInput = document.getElementById('searchInput');
             const searchTerm = searchInput.value.trim();
             const studentResult = document.getElementById('studentResult');
@@ -2880,16 +2570,16 @@
                 return;
             }
             
-            // 在当前班级学生中搜索
-            const allStudents = [...currentClassData.boys, ...currentClassData.girls];
+            // 在所有学生中搜索
+            const allStudents = [...boys.slice(1), ...girls.slice(1)];
             const foundStudents = allStudents.filter(student => 
                 student.includes(searchTerm)
             );
             
             if (foundStudents.length === 0) {
                 const noStudentText = currentLanguage === 'en' 
-                    ? `No student found with name: "${searchTerm}" in Class ${currentClassData.name}` 
-                    : `在${currentClassData.name}未找到名为"${searchTerm}"的学生`;
+                    ? `No student found with name: "${searchTerm}"` 
+                    : `未找到名为"${searchTerm}"的学生`;
                 studentDetails.innerHTML = `<p>${noStudentText}</p>`;
                 studentResult.style.display = 'block';
                 return;
@@ -2903,7 +2593,7 @@
                     ? (currentLanguage === 'en' ? 'Male' : '男生') 
                     : (currentLanguage === 'en' ? 'Female' : '女生');
                 const className = isMale ? 'boy' : 'girl';
-                const classText = currentLanguage === 'en' ? `Class ${currentClassData.name}, Grade 2024` : `2024级${currentClassData.name}`;
+                const classText = currentLanguage === 'en' ? 'Class 10, Grade 2024' : '2024级10班';
                 
                 resultHTML += `
                     <div class="student-info">
@@ -3003,13 +2693,14 @@
         
         // 页面加载时显示初始信息
         window.addEventListener('DOMContentLoaded', () => {
-            console.log('班级座位随机分配系统已加载。');
+            console.log('The intelligent seat allocation system has been loaded.');
             initializeApp();
             
             // 添加事件监听器
             document.getElementById('themeToggle').addEventListener('click', toggleTheme);
             document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
             document.getElementById('searchInput').addEventListener('input', searchStudent);
+            document.getElementById('logoutBtn').addEventListener('click', logout);
             
             // 登录表单提交事件
             document.getElementById('loginForm').addEventListener('submit', function(e) {
@@ -3053,19 +2744,6 @@
             document.getElementById('highlightResults').addEventListener('change', function() {
                 localStorage.setItem('highlightResults', this.checked);
             });
-            
-            // 检查是否有已保存的班级选择
-            const savedClass = localStorage.getItem('selectedClass');
-            if (savedClass && classData[savedClass]) {
-                selectedClass = parseInt(savedClass);
-                currentClassData = classData[selectedClass];
-                // 如果有已登录用户，直接进入主界面
-                const savedUser = localStorage.getItem('currentUser');
-                if (savedUser && users[savedUser]) {
-                    currentUser = savedUser;
-                    showMainApp();
-                }
-            }
         });
     </script>
 </body>
