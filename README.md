@@ -6,6 +6,7 @@
     <title>Class 10's Seat Random Number Program</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* 样式完全不变，保持原样 */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +28,6 @@
             --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
         
-        /* 深色主题变量 */
         .dark-theme {
             --primary: #5b6bf0;
             --secondary: #4c1d95;
@@ -152,7 +152,6 @@
             flex-wrap: wrap;
         }
         
-        /* 新增：保存到历史记录选项容器 */
         .save-history-option {
             display: flex;
             justify-content: center;
@@ -751,7 +750,6 @@
             display: block;
         }
         
-        /* 粒子背景效果 */
         .particles {
             position: fixed;
             top: 0;
@@ -786,7 +784,6 @@
             }
         }
         
-        /* 个性化元素：班级徽章 */
         .class-badge {
             position: absolute;
             top: 20px;
@@ -812,7 +809,6 @@
             color: white;
         }
         
-        /* 个性化元素：装饰性边框 */
         .decorative-border {
             position: absolute;
             top: 10px;
@@ -824,7 +820,6 @@
             pointer-events: none;
         }
         
-        /* 个性化元素：动态背景图案 */
         .bg-pattern {
             position: absolute;
             top: 0;
@@ -838,7 +833,6 @@
             z-index: -1;
         }
         
-        /* 个性化元素：标题装饰 */
         .title-decoration {
             position: absolute;
             bottom: -10px;
@@ -850,7 +844,6 @@
             border-radius: 2px;
         }
         
-        /* 个性化元素：座位编号 */
         .desk-number {
             position: absolute;
             top: -10px;
@@ -869,7 +862,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
-        /* 新增个性化元素：装饰性星星 */
         .decoration-star {
             position: absolute;
             color: rgba(255, 255, 255, 0.7);
@@ -882,7 +874,6 @@
             100% { opacity: 1; transform: scale(1.2); }
         }
         
-        /* 新增个性化元素：时间显示 */
         .time-display {
             position: absolute;
             top: 20px;
@@ -903,7 +894,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* 新增个性化元素：班级标语 */
         .class-motto {
             text-align: center;
             margin-top: 10px;
@@ -931,7 +921,6 @@
             right: 0;
         }
         
-        /* 新增个性化元素：进度条 */
         .progress-bar {
             height: 6px;
             background: rgba(67, 97, 238, 0.2);
@@ -949,7 +938,6 @@
             border-radius: 3px;
         }
         
-        /* 新增个性化元素：学生卡片翻转效果 */
         .student-card {
             perspective: 1000px;
             width: 48%;
@@ -997,7 +985,6 @@
             background: linear-gradient(135deg, #334155, #475569);
         }
         
-        /* 新增个性化元素：教室背景 */
         .classroom-bg {
             position: absolute;
             top: 0;
@@ -1012,7 +999,6 @@
             z-index: -1;
         }
         
-        /* 新功能样式 */
         .top-controls {
             display: flex;
             justify-content: space-between;
@@ -1320,7 +1306,6 @@
             color: var(--primary);
         }
         
-        /* 语言切换按钮样式 */
         .language-toggle {
             display: flex;
             align-items: center;
@@ -1348,7 +1333,6 @@
             color: var(--primary);
         }
         
-        /* 登录界面样式 */
         .login-container {
             position: fixed;
             top: 0;
@@ -1534,32 +1518,6 @@
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
         }
-        
-        /* 已删除：生成座位时的选项 */
-        /* .generate-options {
-            background: var(--light);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: var(--card-shadow);
-            display: none;
-        }
-        
-        .dark-theme .generate-options {
-            background: #1e293b;
-        }
-        
-        .generate-option {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-        }
-        
-        .option-label {
-            font-weight: 500;
-            color: var(--dark);
-        } */
     </style>
 </head>
 <body>
@@ -1585,28 +1543,18 @@
         </div>
     </div>
     
-    <!-- 粒子背景 -->
     <div class="particles" id="particles"></div>
-    
-    <!-- 动态背景图案 -->
     <div class="bg-pattern"></div>
-    
-    <!-- 装饰性星星 -->
     <div class="decoration-star" style="top: 10%; left: 5%;"><i class="fas fa-star"></i></div>
     <div class="decoration-star" style="top: 15%; right: 10%;"><i class="fas fa-star"></i></div>
     <div class="decoration-star" style="bottom: 20%; left: 15%;"><i class="fas fa-star"></i></div>
     <div class="decoration-star" style="bottom: 10%; right: 5%;"><i class="fas fa-star"></i></div>
     
     <div class="container" id="mainContainer" style="display: none;">
-        <!-- 时间显示 -->
         <div class="time-display" id="timeDisplay"></div>
-        
-        <!-- 班级徽章 -->
         <div class="class-badge">
             <i class="fas fa-graduation-cap"></i>
         </div>
-        
-        <!-- 装饰性边框 -->
         <div class="decorative-border"></div>
         
         <header>
@@ -1619,7 +1567,6 @@
             <div class="title-decoration"></div>
         </header>
         
-        <!-- 顶部控制栏 -->
         <div class="top-controls">
             <div class="search-box">
                 <i class="fas fa-search"></i>
@@ -1642,7 +1589,6 @@
             </div>
         </div>
         
-        <!-- 新增：保存到历史记录选项 -->
         <div class="save-history-option">
             <div class="save-history-label">
                 <i class="fas fa-history"></i>
@@ -1654,7 +1600,6 @@
             </label>
         </div>
         
-        <!-- 控制面板 -->
         <div class="control-panel">
             <button class="btn btn-primary" onclick="generateSeats()">
                 <i class="fas fa-random"></i>
@@ -1674,18 +1619,14 @@
             </button>
         </div>
         
-        <!-- 搜索结果 -->
         <div class="student-result" id="studentResult">
             <div class="student-result-header">
                 <i class="fas fa-user-graduate"></i>
                 <span id="searchResultText">Student Search Result</span>
             </div>
-            <div class="student-details" id="studentDetails">
-                <!-- 搜索结果将在这里显示 -->
-            </div>
+            <div class="student-details" id="studentDetails"></div>
         </div>
         
-        <!-- 进度条 -->
         <div class="progress-bar" id="progressBar">
             <div class="progress-fill" id="progressFill"></div>
         </div>
@@ -1734,7 +1675,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             </div>
         </div>
         
-        <!-- 历史记录面板 -->
         <div class="history-panel" id="historyPanel">
             <div class="history-header">
                 <div class="history-title">
@@ -1746,12 +1686,9 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                     <span id="clearHistoryText">Clear History</span>
                 </button>
             </div>
-            <div class="history-list" id="historyList">
-                <!-- 历史记录将在这里显示 -->
-            </div>
+            <div class="history-list" id="historyList"></div>
         </div>
         
-        <!-- 设置面板 -->
         <div class="settings-panel" id="settingsPanel">
             <div class="settings-header">
                 <div class="settings-title">
@@ -1831,13 +1768,13 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
         <footer>
             <div class="footer-content">
                 <div>
-                    <p id="footerText">© 2025 Class 10's Seat Random Number Program | Author by @wrh316 | Website</p>
+                    <p id="footerText">© 2026 Class 10's Seat Random Number Program | Author by @wrh316 | Website</p>
                     <p style="margin-top: 5px; font-size: 0.9rem; color: #94a3b8;">
                         <i class="fas fa-code"></i> <span id="versionInfoText">Website Versions，C++ Versions：https://note.ms/class10seat</span>
                     </p>
                 </div>
                 <div class="version">
-                    <i class="fas fa-star"></i> <span id="versionText">Version 4.12.9 | Last Update: 2026.1.11</span>
+                    <i class="fas fa-star"></i> <span id="versionText">Version 5.3.6 | Last Update: 2026.3.4</span>
                 </div>
             </div>
         </footer>
@@ -1848,54 +1785,37 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
     </div>
 
     <script>
-        // 用户账户数据（已删除Gao账户，修改wrh316密码）
+        // 用户账户数据
         const users = {
             "public": "Lengendary Grandmaster",
             "wrh316": "998244353orz%%%"
         };
         
-        // 语言资源
+        // 语言资源 (保持不变)
         const resources = {
             en: {
-                // 页面标题和副标题
                 pageTitle: "Class 10, Grade 2024",
                 pageSubtitle: "Seat Random Number Program",
                 classMotto: "Perfect in every way, Class 10 fearless, ten battles and ten victories, winning the golden cup.",
-                
-                // 按钮文本
                 generateBtnText: "🎲 Generate Random Seating Chart",
                 resetBtnText: "🔄 Reset System",
                 historyBtnText: "History",
                 settingsBtnText: "Settings",
-                
-                // 保存到历史记录选项
                 saveHistoryLabel: "Save to history",
-                
-                // 搜索相关
                 searchPlaceholder: "Search for a student...",
                 searchResultText: "Student Search Result",
-                
-                // 输出区域
                 outputTitleText: "Seat Allocation Result",
                 consoleTabText: "Console View",
                 visualTabText: "Visual View",
                 teacherDeskText: "Teacher's Desk",
                 visualPromptText: 'Click the "Generate Random Seating Chart" button to start seat allocation.',
-                
-                // 加载文本
                 loadingText: "Seats are being randomly assigned...",
-                
-                // 统计卡片
                 boyCountText: "Boy Count",
                 girlCountText: "Girl Count",
                 totalCountText: "All Count",
                 seatCountText: "Seat Count",
-                
-                // 历史记录
                 historyTitleText: "Generation History",
                 clearHistoryText: "Clear History",
-                
-                // 设置
                 settingsTitleText: "System Settings",
                 closeSettingsText: "Close",
                 autoSaveLabel: "Auto-save History",
@@ -1904,25 +1824,13 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 animationsDesc: "Enable animations for a better user experience",
                 highlightLabel: "Highlight Search Results",
                 highlightDesc: "Highlight found students in the seating chart",
-                
-                // 主题切换
                 themeText: "Dark Mode",
-                
-                // 语言切换
                 languageText: "中文",
-                
-                // 成功消息
                 successText: "The Code has Completed Successfully",
-                
-                // 页脚
-                footerText: "© 2025 Class 10's Seat Random Number Program | Author by @wrh316 | Website",
+                footerText: "© 2026 Class 10's Seat Random Number Program | Author by @wrh316 | Website",
                 versionInfoText: "Website Versions，C++ Versions：https://note.ms/class10seat",
-                versionText: "Version 4.12.9 | Last Update: 2026.1.11",
-                
-                // 初始输出文本
+                versionText: "Version 5.3.6 | Last Update: 2026.3.4",
                 initialOutput: "Welcome to use the intelligent seat allocation system.\nClick the button above to start generating a random seating chart.\nThis system ensures the randomness and fairness of seat allocation, with a 3.2% probability of each person being assigned.",
-                
-                // 登录相关
                 loginTitle: "Class 10 Seat System",
                 usernameLabel: "Username",
                 passwordLabel: "Password",
@@ -1930,45 +1838,28 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 loginError: "Invalid username or password"
             },
             zh: {
-                // 页面标题和副标题
                 pageTitle: "2024级10班",
                 pageSubtitle: "座位随机分配系统",
                 classMotto: "十全十美，十班无畏，十战十胜，勇夺金杯。",
-                
-                // 按钮文本
                 generateBtnText: "🎲 生成随机座位表",
                 resetBtnText: "🔄 重置系统",
                 historyBtnText: "历史记录",
                 settingsBtnText: "设置",
-                
-                // 保存到历史记录选项
                 saveHistoryLabel: "保存到历史记录",
-                
-                // 搜索相关
                 searchPlaceholder: "搜索学生...",
                 searchResultText: "学生搜索结果",
-                
-                // 输出区域
                 outputTitleText: "座位分配结果",
                 consoleTabText: "控制台视图",
                 visualTabText: "可视化视图",
                 teacherDeskText: "讲台",
                 visualPromptText: '点击"生成随机座位表"按钮开始座位分配。',
-                
-                // 加载文本
                 loadingText: "正在随机分配座位...",
-                
-                // 统计卡片
                 boyCountText: "男生人数",
                 girlCountText: "女生人数",
                 totalCountText: "总人数",
                 seatCountText: "座位数量",
-                
-                // 历史记录
                 historyTitleText: "生成历史",
                 clearHistoryText: "清空历史",
-                
-                // 设置
                 settingsTitleText: "系统设置",
                 closeSettingsText: "关闭",
                 autoSaveLabel: "自动保存历史",
@@ -1977,25 +1868,13 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 animationsDesc: "启用动画以获得更好的用户体验",
                 highlightLabel: "高亮搜索结果",
                 highlightDesc: "在座位表中高亮显示找到的学生",
-                
-                // 主题切换
                 themeText: "深色模式",
-                
-                // 语言切换
                 languageText: "English",
-                
-                // 成功消息
                 successText: "代码已成功完成",
-                
-                // 页脚
-                footerText: "© 2025 10班座位随机分配系统 | 作者：@wrh316 | 网站",
+                footerText: "© 2026 10班座位随机分配系统 | 作者：@wrh316 | 网站",
                 versionInfoText: "网页版本，C++版本：https://note.ms/class10seat",
-                versionText: "版本 4.12.9 | 最后更新：2026.1.11",
-                
-                // 初始输出文本
+                versionText: "版本 5.3.6 | 最后更新：2026.3.4",
                 initialOutput: "欢迎使用智能座位分配系统。\n点击上方按钮开始生成随机座位表。\n本系统确保座位分配的随机性和公平性，每个人被分配的概率为3.2%。",
-                
-                // 登录相关
                 loginTitle: "10班座位系统",
                 usernameLabel: "用户名",
                 passwordLabel: "密码",
@@ -2026,9 +1905,8 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
         let currentUser = null;
         let deskMateHistory = JSON.parse(localStorage.getItem('deskMateHistory')) || {};
         
-        // 初始化主题和语言
+        // 初始化应用 (保持不变)
         function initializeApp() {
-            // 检查是否已登录
             const savedUser = localStorage.getItem('currentUser');
             if (savedUser && users[savedUser]) {
                 currentUser = savedUser;
@@ -2037,40 +1915,32 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 showLogin();
             }
             
-            // 设置主题
             if (isDarkTheme) {
                 document.body.classList.add('dark-theme');
                 document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i><span id="themeText">Light Mode</span>';
             }
             
-            // 设置语言
             setLanguage(currentLanguage);
             
-            // 更新时钟
             updateClock();
             setInterval(updateClock, 1000);
             
-            // 创建粒子背景
             createParticles();
         }
         
-        // 显示登录界面
         function showLogin() {
             document.getElementById('loginContainer').style.display = 'flex';
             document.getElementById('mainContainer').style.display = 'none';
         }
         
-        // 显示主应用
         function showMainApp() {
             document.getElementById('loginContainer').style.display = 'none';
             document.getElementById('mainContainer').style.display = 'block';
             
-            // 更新用户信息
             document.getElementById('userName').textContent = currentUser;
             document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
         }
         
-        // 登录功能
         function login(username, password) {
             if (users[username] && users[username] === password) {
                 currentUser = username;
@@ -2081,21 +1951,18 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             return false;
         }
         
-        // 登出功能
         function logout() {
             currentUser = null;
             localStorage.removeItem('currentUser');
             showLogin();
         }
         
-        // 设置语言
         function setLanguage(lang) {
             currentLanguage = lang;
             localStorage.setItem('language', lang);
             
             const resource = resources[lang];
             
-            // 更新所有文本元素
             document.getElementById('pageTitle').textContent = resource.pageTitle;
             document.getElementById('pageSubtitle').textContent = resource.pageSubtitle;
             document.getElementById('classMotto').textContent = resource.classMotto;
@@ -2133,26 +2000,22 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             document.getElementById('versionInfoText').textContent = resource.versionInfoText;
             document.getElementById('versionText').textContent = resource.versionText;
             
-            // 更新登录界面文本
             document.getElementById('loginTitle').textContent = resource.loginTitle;
             document.querySelector('label[for="username"]').textContent = resource.usernameLabel;
             document.querySelector('label[for="password"]').textContent = resource.passwordLabel;
             document.querySelector('.login-btn').textContent = resource.loginButton;
             document.getElementById('loginError').textContent = resource.loginError;
             
-            // 更新初始输出文本
             if (!currentSeating) {
                 document.getElementById('output').textContent = resource.initialOutput;
             }
         }
         
-        // 切换语言
         function toggleLanguage() {
             const newLanguage = currentLanguage === 'en' ? 'zh' : 'en';
             setLanguage(newLanguage);
         }
         
-        // 创建粒子背景
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 30;
@@ -2161,18 +2024,14 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
-                // 随机大小
                 const size = Math.random() * 10 + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 
-                // 随机位置
                 particle.style.left = `${Math.random() * 100}%`;
                 
-                // 随机动画延迟
                 particle.style.animationDelay = `${Math.random() * 15}s`;
                 
-                // 随机动画时长
                 const duration = Math.random() * 10 + 10;
                 particle.style.animationDuration = `${duration}s`;
                 
@@ -2180,20 +2039,17 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             }
         }
         
-        // 使用Crypto API生成安全的随机数
         async function getSecureRandomValues(length) {
             const array = new Uint32Array(length);
             window.crypto.getRandomValues(array);
             return array;
         }
         
-        // 使用Fisher-Yates洗牌算法与Crypto API
         async function shuffleArraySecure(array) {
             const shuffledArray = [...array];
             const randomValues = await getSecureRandomValues(shuffledArray.length);
             
             for (let i = shuffledArray.length - 1; i > 0; i--) {
-                // 使用安全的随机数生成器
                 const j = randomValues[i] % (i + 1);
                 [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
             }
@@ -2201,7 +2057,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             return shuffledArray;
         }
         
-        // 生成固定宽度的字符串
         function setw(text, width) {
             let str = text.toString();
             while (str.length < width) {
@@ -2210,7 +2065,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             return str;
         }
         
-        // 显示成功消息
         function showSuccessMessage() {
             const message = document.getElementById('successMessage');
             message.classList.add('show');
@@ -2219,9 +2073,7 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             }, 3000);
         }
         
-        // 切换标签页
         function switchTab(tabName) {
-            // 移除所有标签页的active类
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
@@ -2229,17 +2081,14 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 btn.classList.remove('active');
             });
             
-            // 激活选中的标签页
             document.getElementById(`${tabName}-tab`).classList.add('active');
             event.target.classList.add('active');
         }
         
-        // 判断学生是否为男生
         function isBoy(name) {
             return boys.includes(name);
         }
         
-        // 更新时钟显示
         function updateClock() {
             const now = new Date();
             const timeString = now.toLocaleString('zh-CN', {
@@ -2258,7 +2107,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             const desk = document.createElement('div');
             desk.className = 'desk';
             
-            // 添加座位编号
             const deskNumberElem = document.createElement('div');
             deskNumberElem.className = 'desk-number';
             deskNumberElem.textContent = deskNumber;
@@ -2278,15 +2126,15 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             return desk;
         }
         
-        // 获取学生未坐过的同桌列表
-        function getAvailableDeskMates(student, usedDeskMates) {
+        // 获取学生未坐过的同桌列表 (过滤已使用的人)
+        function getAvailableDeskMates(student, usedPeople) {
             const allStudents = [...boys.slice(1), ...girls.slice(1)];
             const currentDeskMates = deskMateHistory[student] || [];
             
             return allStudents.filter(otherStudent => 
                 otherStudent !== student && 
                 !currentDeskMates.includes(otherStudent) &&
-                !usedDeskMates.includes(otherStudent)
+                !usedPeople.includes(otherStudent) // 确保这个人还没有被分配出去
             );
         }
         
@@ -2310,7 +2158,7 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             localStorage.setItem('deskMateHistory', JSON.stringify(deskMateHistory));
         }
         
-        // 生成座位表
+        // 生成座位表 (修改核心逻辑，确保23对男女，4对男男，优先匹配未做过同桌)
         async function generateSeats() {
             const output = document.getElementById('output');
             const seatingPlan = document.getElementById('seatingPlan');
@@ -2318,14 +2166,12 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             const progressBar = document.getElementById('progressBar');
             const progressFill = document.getElementById('progressFill');
             
-            // 显示加载动画和进度条
             loading.style.display = 'block';
             progressBar.style.display = 'block';
             output.textContent = currentLanguage === 'en' 
                 ? 'Seats are being allocated. Please wait a moment...' 
                 : '正在分配座位，请稍候...';
             
-            // 模拟进度条
             let progress = 0;
             const progressInterval = setInterval(() => {
                 progress += 5;
@@ -2338,151 +2184,160 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             setTimeout(async () => {
                 let outputText = '';
                 
-                // 创建卡片数组
-                let cardboy = Array.from({length: 31}, (_, i) => i + 1);
-                let cardgirl = Array.from({length: 23}, (_, i) => i + 1);
+                // 创建男生索引数组 (1-31) 和女生索引数组 (1-23)
+                let boyIndices = Array.from({length: 31}, (_, i) => i + 1);
+                let girlIndices = Array.from({length: 23}, (_, i) => i + 1);
                 
-                // 使用安全的随机算法打乱数组
-                cardboy = await shuffleArraySecure(cardboy);
-                cardgirl = await shuffleArraySecure(cardgirl);
+                // 打乱顺序
+                boyIndices = await shuffleArraySecure(boyIndices);
+                girlIndices = await shuffleArraySecure(girlIndices);
                 
-                // 清空可视化座位表
-                seatingPlan.innerHTML = '';
+                // 存储当前分配中用过的学生名字 (确保不重复分配)
+                let usedNames = [];
                 
-                // 存储当前座位分配
-                currentSeating = {
-                    boys: [...cardboy],
-                    girls: [...cardgirl],
-                    timestamp: new Date().toISOString()
-                };
+                // 存储待分配的男生名字列表和女生名字列表 (根据打乱后的索引)
+                let boyNames = boyIndices.map(i => boys[i]);
+                let girlNames = girlIndices.map(i => girls[i]);
                 
-                // 生成座位表
-                let deskCounter = 1;
-                let boyGirlPairs = 23; // 男生女生同桌对数
-                let boyBoyPairs = 4;   // 男生男生同桌对数
+                // --- 第一步：分配23对男女同桌 ---
+                let boyGirlSeats = [];
+                // 使用一个临时副本，方便移除已经分配的人
+                let availableBoys = [...boyNames];
+                let availableGirls = [...girlNames];
                 
-                // 创建座位数组
-                let seats = [];
-                let usedStudents = [];
-                
-                // 添加男生女生同桌 - 确保前后错开
-                for (let i = 0; i < boyGirlPairs; i++) {
-                    const boyName = boys[cardboy[i]];
-                    const girlName = girls[cardgirl[i]];
+                for (let i = 0; i < 23; i++) {
+                    // 从剩余男生女生中各取一个 (按顺序，但已打乱)
+                    // 优先尝试寻找没做过同桌的组合
+                    let chosenBoy = availableBoys[0]; // 默认取第一个
+                    let chosenGirl = availableGirls[0];
+                    let foundCompatible = false;
                     
-                    // 检查这两个学生是否已经坐过同桌
-                    if (deskMateHistory[boyName] && deskMateHistory[boyName].includes(girlName)) {
-                        // 如果已经坐过同桌，尝试找其他未坐过的组合
-                        const availableGirls = getAvailableDeskMates(boyName, usedStudents);
-                        if (availableGirls.length > 0) {
-                            // 随机选择一个未坐过的女生
-                            const randomGirl = availableGirls[Math.floor(Math.random() * availableGirls.length)];
-                            // 交替安排男生女生和女生男生
-                            if (i % 2 === 0) {
-                                // 男生在左，女生在右
-                                seats.push({
-                                    type: 'boy-girl',
-                                    student1: boyName,
-                                    student2: randomGirl
-                                });
-                            } else {
-                                // 女生在左，男生在右
-                                seats.push({
-                                    type: 'girl-boy',
-                                    student1: randomGirl,
-                                    student2: boyName
-                                });
-                            }
-                            usedStudents.push(boyName, randomGirl);
-                            updateDeskMateHistory(boyName, randomGirl);
-                            continue;
+                    // 遍历剩余男生，尝试为这个男生找一个没同桌过的女生
+                    for (let bIdx = 0; bIdx < availableBoys.length; bIdx++) {
+                        const boy = availableBoys[bIdx];
+                        // 获取这个男生没同桌过的女生列表 (且还在availableGirls中)
+                        const neverMetGirls = availableGirls.filter(girl => 
+                            !(deskMateHistory[boy] && deskMateHistory[boy].includes(girl))
+                        );
+                        if (neverMetGirls.length > 0) {
+                            chosenBoy = boy;
+                            // 随机选一个没同桌过的女生 (也可以取第一个，但为了随机性，随机选)
+                            const randomIndex = Math.floor(Math.random() * neverMetGirls.length);
+                            chosenGirl = neverMetGirls[randomIndex];
+                            foundCompatible = true;
+                            break;
                         }
                     }
                     
-                    // 如果找不到未坐过的组合，使用原组合
-                    // 交替安排男生女生和女生男生
-                    if (i % 2 === 0) {
-                        // 男生在左，女生在右
-                        seats.push({
+                    // 如果没找到兼容的，就仍然用原配 (第一个男生和第一个女生)
+                    if (!foundCompatible) {
+                        chosenBoy = availableBoys[0];
+                        chosenGirl = availableGirls[0];
+                    }
+                    
+                    // 决定座位左右顺序：交替男女/女男，使前后排错开
+                    let seatType = (i % 2 === 0) ? 'boy-girl' : 'girl-boy';
+                    if (seatType === 'boy-girl') {
+                        boyGirlSeats.push({
                             type: 'boy-girl',
-                            student1: boyName,
-                            student2: girlName
+                            student1: chosenBoy,
+                            student2: chosenGirl
                         });
                     } else {
-                        // 女生在左，男生在右
-                        seats.push({
+                        boyGirlSeats.push({
                             type: 'girl-boy',
-                            student1: girlName,
-                            student2: boyName
+                            student1: chosenGirl,
+                            student2: chosenBoy
                         });
                     }
-                    usedStudents.push(boyName, girlName);
-                    updateDeskMateHistory(boyName, girlName);
+                    
+                    // 从可用列表中移除已分配的两个人
+                    availableBoys = availableBoys.filter(b => b !== chosenBoy);
+                    availableGirls = availableGirls.filter(g => g !== chosenGirl);
+                    
+                    // 记录已用名字
+                    usedNames.push(chosenBoy, chosenGirl);
+                    // 更新历史 (先更新，供后续配对参考)
+                    updateDeskMateHistory(chosenBoy, chosenGirl);
                 }
                 
-                // 添加男生男生同桌
-                for (let i = 0; i < boyBoyPairs; i++) {
-                    const boy1Name = boys[cardboy[boyGirlPairs + i]];
-                    const boy2Name = boys[cardboy[boyGirlPairs + boyBoyPairs + i]];
-                    
-                    // 检查这两个男生是否已经坐过同桌
-                    if (deskMateHistory[boy1Name] && deskMateHistory[boy1Name].includes(boy2Name)) {
-                        // 如果已经坐过同桌，尝试找其他未坐过的男生
-                        const availableBoys = getAvailableDeskMates(boy1Name, usedStudents);
-                        if (availableBoys.length > 0) {
-                            // 随机选择一个未坐过的男生
-                            const randomBoy = availableBoys[Math.floor(Math.random() * availableBoys.length)];
-                            seats.push({
-                                type: 'boy-boy',
-                                student1: boy1Name,
-                                student2: randomBoy
-                            });
-                            usedStudents.push(boy1Name, randomBoy);
-                            updateDeskMateHistory(boy1Name, randomBoy);
-                            continue;
-                        }
-                    }
-                    
-                    // 如果找不到未坐过的组合，使用原组合
-                    seats.push({
-                        type: 'boy-boy',
-                        student1: boy1Name,
-                        student2: boy2Name
-                    });
-                    usedStudents.push(boy1Name, boy2Name);
-                    updateDeskMateHistory(boy1Name, boy2Name);
-                }
+                // --- 第二步：分配4对男男同桌 ---
+                // 剩余男生: availableBoys 中应该还有 31-23 = 8 个男生
+                let boyBoySeats = [];
+                // 打乱剩余男生顺序，增加随机性
+                availableBoys = await shuffleArraySecure(availableBoys);
                 
-                // 随机打乱座位顺序
-                seats = await shuffleArraySecure(seats);
-                
-                // 确保前后排男女交错
-                for (let i = 0; i < seats.length; i++) {
-                    if (i >= 4) { // 从第二排开始检查
-                        const currentDesk = seats[i];
-                        const previousDesk = seats[i-4]; // 前一排的同列座位
-                        
-                        // 如果前排是男女组合
-                        if (previousDesk.type === 'boy-girl' || previousDesk.type === 'girl-boy') {
-                            // 确保当前排是相反的组合
-                            if (previousDesk.type === 'boy-girl') {
-                                currentDesk.type = 'girl-boy';
-                                // 交换座位顺序
-                                const temp = currentDesk.student1;
-                                currentDesk.student1 = currentDesk.student2;
-                                currentDesk.student2 = temp;
-                            } else if (previousDesk.type === 'girl-boy') {
-                                currentDesk.type = 'boy-girl';
-                                // 交换座位顺序
-                                const temp = currentDesk.student1;
-                                currentDesk.student1 = currentDesk.student2;
-                                currentDesk.student2 = temp;
+                for (let i = 0; i < 4; i++) {
+                    // 从剩余男生中取两个
+                    let boy1 = availableBoys[0];
+                    let boy2 = availableBoys[1];
+                    let foundCompatible = false;
+                    
+                    // 尝试寻找没同桌过的男生对
+                    for (let b1Idx = 0; b1Idx < availableBoys.length; b1Idx++) {
+                        const candidate1 = availableBoys[b1Idx];
+                        // 找candidate1没同桌过的男生 (从剩下的里面)
+                        for (let b2Idx = b1Idx + 1; b2Idx < availableBoys.length; b2Idx++) {
+                            const candidate2 = availableBoys[b2Idx];
+                            if (!(deskMateHistory[candidate1] && deskMateHistory[candidate1].includes(candidate2)) &&
+                                !(deskMateHistory[candidate2] && deskMateHistory[candidate2].includes(candidate1))) {
+                                boy1 = candidate1;
+                                boy2 = candidate2;
+                                foundCompatible = true;
+                                break;
                             }
                         }
+                        if (foundCompatible) break;
+                    }
+                    
+                    // 如果没找到兼容对，就用前两个
+                    if (!foundCompatible) {
+                        boy1 = availableBoys[0];
+                        boy2 = availableBoys[1];
+                    }
+                    
+                    boyBoySeats.push({
+                        type: 'boy-boy',
+                        student1: boy1,
+                        student2: boy2
+                    });
+                    
+                    // 移除已分配的两个人
+                    availableBoys = availableBoys.filter(b => b !== boy1 && b !== boy2);
+                    
+                    usedNames.push(boy1, boy2);
+                    updateDeskMateHistory(boy1, boy2);
+                }
+                
+                // 合并所有座位
+                let allSeats = [...boyGirlSeats, ...boyBoySeats];
+                
+                // 再次打乱座位顺序，增加随机性
+                allSeats = await shuffleArraySecure(allSeats);
+                
+                // 进一步调整前后排男女交错 (简单逻辑：遍历，如果前排是男女，后排尝试改成相反的左右)
+                for (let i = 4; i < allSeats.length; i++) {
+                    const prevDesk = allSeats[i-4];
+                    const currentDesk = allSeats[i];
+                    // 如果前一桌是男女混合，且当前也是男女混合，则尝试交换左右位置实现交错
+                    if ((prevDesk.type === 'boy-girl' || prevDesk.type === 'girl-boy') &&
+                        (currentDesk.type === 'boy-girl' || currentDesk.type === 'girl-boy')) {
+                        // 如果前一桌是 boy-girl，当前也是 boy-girl，就交换当前
+                        if (prevDesk.type === 'boy-girl' && currentDesk.type === 'boy-girl') {
+                            currentDesk.type = 'girl-boy';
+                            [currentDesk.student1, currentDesk.student2] = [currentDesk.student2, currentDesk.student1];
+                        } else if (prevDesk.type === 'girl-boy' && currentDesk.type === 'girl-boy') {
+                            currentDesk.type = 'boy-girl';
+                            [currentDesk.student1, currentDesk.student2] = [currentDesk.student2, currentDesk.student1];
+                        }
                     }
                 }
                 
-                // 将座位分成7行，每行4个座位
+                // 生成可视化座位和输出文本
+                seatingPlan.innerHTML = '';
+                let deskCounter = 1;
+                outputText = '';
+                
                 for (let i = 0; i < 7; i++) {
                     const row = document.createElement('div');
                     row.className = 'row';
@@ -2490,8 +2345,8 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                     
                     for (let j = 0; j < 4; j++) {
                         const seatIndex = i * 4 + j;
-                        if (seatIndex < seats.length) {
-                            const seat = seats[seatIndex];
+                        if (seatIndex < allSeats.length) {
+                            const seat = allSeats[seatIndex];
                             line += setw(seat.student1, 4) + ' ' + setw(seat.student2, 4) + ' | ';
                             
                             const desk = createDesk(
@@ -2500,6 +2355,13 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                                 deskCounter++
                             );
                             row.appendChild(desk);
+                        } else {
+                            // 理论上不会超出，因为27个座位正好7*4=28，有1个空位？但实际27个座位，7行4列=28，会有一个空位，但我们只有27个，所以最后一排可能只有3个座位
+                            // 处理剩余不足4个的情况
+                            for (let k = j; k < 4; k++) {
+                                line += '        | '; // 空位占位
+                            }
+                            break;
                         }
                     }
                     
@@ -2507,42 +2369,39 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                     seatingPlan.appendChild(row);
                 }
                 
-                // 设置输出
+                // 如果因为座位数不是4的倍数，可能会有空位，但27个座位7行4列最后一排3个，正好。
+                // 但为了严谨，再补充一个空行输出？
+                // 实际上面循环已经处理。
+                
                 output.textContent = outputText;
                 loading.style.display = 'none';
                 progressBar.style.display = 'none';
                 progressFill.style.width = '0%';
                 
-                // 保存到历史记录
                 const saveHistory = document.getElementById('saveHistory').checked;
                 if (saveHistory) {
                     saveToHistory(outputText);
                 }
                 
-                // 每次生成座位后自动取消勾选
                 document.getElementById('saveHistory').checked = false;
                 
-                // 显示成功消息
                 showSuccessMessage();
                 
             }, 1500);
         }
         
-        // 重置系统（清空所有历史记录和缓存）
+        // 重置系统
         function resetSystem() {
             if (confirm(currentLanguage === 'en' 
                 ? "Are you sure you want to reset the system? This will clear all history and cache." 
                 : "确定要重置系统吗？这将清除所有历史记录和缓存。")) {
                 
-                // 清空历史记录
                 history = [];
                 localStorage.removeItem('seatHistory');
                 
-                // 清空同桌历史记录
                 deskMateHistory = {};
                 localStorage.removeItem('deskMateHistory');
                 
-                // 清空输出
                 const resource = resources[currentLanguage];
                 document.getElementById('output').textContent = resource.initialOutput;
                 document.getElementById('seatingPlan').innerHTML = `<div style="text-align: center; padding: 40px; color: #7f8c8d; font-size: 1.2rem;">${resource.visualPromptText}</div>`;
@@ -2550,18 +2409,14 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 document.getElementById('historyPanel').style.display = 'none';
                 currentSeating = null;
                 
-                // 重置保存到历史记录的复选框
                 document.getElementById('saveHistory').checked = false;
                 
-                // 重新渲染历史记录
                 renderHistory();
                 
-                // 显示成功消息
                 showSuccessMessage();
             }
         }
         
-        // 切换主题
         function toggleTheme() {
             isDarkTheme = !isDarkTheme;
             document.body.classList.toggle('dark-theme');
@@ -2573,13 +2428,11 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 themeToggle.innerHTML = '<i class="fas fa-moon"></i><span id="themeText">Dark Mode</span>';
             }
             
-            // 更新主题文本
             document.getElementById('themeText').textContent = resources[currentLanguage].themeText;
             
             localStorage.setItem('darkTheme', isDarkTheme);
         }
         
-        // 切换历史记录面板
         function toggleHistory() {
             const historyPanel = document.getElementById('historyPanel');
             const settingsPanel = document.getElementById('settingsPanel');
@@ -2593,7 +2446,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             }
         }
         
-        // 切换设置面板
         function toggleSettings() {
             const settingsPanel = document.getElementById('settingsPanel');
             const historyPanel = document.getElementById('historyPanel');
@@ -2606,7 +2458,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             }
         }
         
-        // 保存到历史记录
         function saveToHistory(outputText) {
             const historyItem = {
                 output: outputText,
@@ -2616,7 +2467,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             
             history.unshift(historyItem);
             
-            // 限制历史记录数量
             if (history.length > 10) {
                 history = history.slice(0, 10);
             }
@@ -2624,7 +2474,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             localStorage.setItem('seatHistory', JSON.stringify(history));
         }
         
-        // 渲染历史记录
         function renderHistory() {
             const historyList = document.getElementById('historyList');
             historyList.innerHTML = '';
@@ -2655,7 +2504,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 historyItem.appendChild(header);
                 historyItem.appendChild(content);
                 
-                // 添加点击事件以加载历史记录
                 historyItem.addEventListener('click', () => {
                     loadHistoryItem(item);
                 });
@@ -2664,14 +2512,12 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             });
         }
         
-        // 加载历史记录项
         function loadHistoryItem(item) {
             document.getElementById('output').textContent = item.output;
             document.getElementById('historyPanel').style.display = 'none';
             showSuccessMessage();
         }
         
-        // 清空历史记录
         function clearHistory() {
             if (confirm(currentLanguage === 'en' 
                 ? "Are you sure you want to clear all history?" 
@@ -2694,7 +2540,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 return;
             }
             
-            // 在所有学生中搜索
             const allStudents = [...boys.slice(1), ...girls.slice(1)];
             const foundStudents = allStudents.filter(student => 
                 student.includes(searchTerm)
@@ -2709,7 +2554,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 return;
             }
             
-            // 显示搜索结果
             let resultHTML = '';
             foundStudents.forEach(student => {
                 const isMale = isBoy(student);
@@ -2727,7 +2571,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                     </div>
                 `;
                 
-                // 如果当前有座位分配，显示座位信息
                 if (currentSeating) {
                     const seatInfo = findStudentSeat(student);
                     if (seatInfo) {
@@ -2759,13 +2602,11 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             studentDetails.innerHTML = resultHTML;
             studentResult.style.display = 'block';
             
-            // 高亮显示搜索结果
             if (document.getElementById('highlightResults').checked && currentSeating) {
                 highlightStudentInSeating(foundStudents);
             }
         }
         
-        // 查找学生座位信息
         function findStudentSeat(studentName) {
             if (!currentSeating) return null;
             
@@ -2792,11 +2633,9 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             return null;
         }
         
-        // 在座位表中高亮显示学生
         function highlightStudentInSeating(studentNames) {
             const desks = document.querySelectorAll('.desk');
             
-            // 先移除所有高亮
             desks.forEach(desk => {
                 const students = desk.querySelectorAll('.student');
                 students.forEach(student => {
@@ -2804,7 +2643,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 });
             });
             
-            // 高亮匹配的学生
             desks.forEach(desk => {
                 const students = desk.querySelectorAll('.student');
                 students.forEach(student => {
@@ -2815,18 +2653,16 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
             });
         }
         
-        // 页面加载时显示初始信息
+        // 页面加载
         window.addEventListener('DOMContentLoaded', () => {
             console.log('The intelligent seat allocation system has been loaded.');
             initializeApp();
             
-            // 添加事件监听器
             document.getElementById('themeToggle').addEventListener('click', toggleTheme);
             document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
             document.getElementById('searchInput').addEventListener('input', searchStudent);
             document.getElementById('logoutBtn').addEventListener('click', logout);
             
-            // 登录表单提交事件
             document.getElementById('loginForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 const username = document.getElementById('username').value;
@@ -2839,7 +2675,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 }
             });
             
-            // 从本地存储加载设置
             const autoSave = localStorage.getItem('autoSave');
             const showAnimations = localStorage.getItem('showAnimations');
             const highlightResults = localStorage.getItem('highlightResults');
@@ -2856,7 +2691,6 @@ This system ensures the randomness and fairness of seat allocation, with a 3.2% 
                 document.getElementById('highlightResults').checked = highlightResults === 'true';
             }
             
-            // 保存设置到本地存储
             document.getElementById('autoSave').addEventListener('change', function() {
                 localStorage.setItem('autoSave', this.checked);
             });
